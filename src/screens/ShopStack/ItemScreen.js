@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, FlatList, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Text } from 'react-native-paper';
 
-import { shoppingCartState } from '../../providers/shoppingCartProvider';
+import { shoppingCartState, updatePrice } from '../../providers/shoppingCartProvider';
 import Styles from '../../utils/Styles';
 import BottomButton from '../../components/BottomButton';
 
@@ -46,7 +46,7 @@ function ItemScreen({ route, navigation }) {
             newShoppingCart.items.push(currentItem)
             
         }
-        dispatch({ items: newShoppingCart.items, total: newShoppingCart.total })
+        dispatch({ items: newShoppingCart.items, total: updatePrice(newShoppingCart) })
     }
     // TO DO CLEAN UP
     return (

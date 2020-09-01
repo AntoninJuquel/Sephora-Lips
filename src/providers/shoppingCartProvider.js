@@ -1,6 +1,6 @@
 import React from 'react';
 
-const shoppingCart = { items: [], total: 0 }
+const shoppingCart = { items: [], total: 0, delivery: {} }
 
 const shoppingCartContext = React.createContext(shoppingCart);
 const dispatchShoppingCartContext = React.createContext(undefined);
@@ -23,3 +23,12 @@ export const shoppingCartState = () => [
     React.useContext(shoppingCartContext),
     React.useContext(dispatchShoppingCartContext)
 ];
+
+export const updatePrice = (s) => {
+    let total = 0
+    s.items.forEach(element => {
+        total += (element.price * element.quantity)
+    });
+    total += (s.delivery.price === undefined ? 0 : s.delivery.price)
+    return total
+}

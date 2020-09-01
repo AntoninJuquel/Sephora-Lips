@@ -6,6 +6,7 @@ import { shoppingCartState } from '../../providers/shoppingCartProvider';
 import BottomButton from '../../components/BottomButton';
 
 function ShoppingCartScreen({ navigation }) {
+  
   const [shoppingCart, dispatch] = shoppingCartState()
 
   const renderItem = ({ item }) => {

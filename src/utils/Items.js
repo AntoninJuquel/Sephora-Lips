@@ -19,7 +19,7 @@ const Items =
             {
                 id: 2,
                 name: 'Livraison Express',
-                desc: '1 à 2 2 jours',
+                desc: '1 à 2 jours',
                 price: 6,
                 sub: false
             },
