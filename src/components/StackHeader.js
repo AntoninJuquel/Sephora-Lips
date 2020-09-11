@@ -3,14 +3,14 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { shoppingCartState } from "../providers/shoppingCartProvider";
 import { View,Text } from "react-native";
 
-function StackHeader({ title, color, left, leftFunc, navigation}) {
+function StackHeader({ title, color, left, leftFunc, navigation, right}) {
     return (
         {
             title: title,
             headerLeft: () => (
                 (left && <Icon.Button name={left} size={25} backgroundColor={color} onPress={() => leftFunc()}></Icon.Button>)
             ),
-            headerRight: () => ShoppingCart({color, navigation}),
+            headerRight: () => (right && ShoppingCart({color, navigation})),
         }
     )
 }

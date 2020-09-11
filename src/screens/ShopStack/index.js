@@ -39,7 +39,7 @@ function ShopStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Shop'
                 component={TopTabNavigator}
-                options={StackHeader({ title: 'SHOPPING BEAUTÉ', color: '#d02860', left: 'menu', leftFunc: navigation.openDrawer, navigation})}
+                options={StackHeader({ title: 'SHOPPING BEAUTÉ', color: '#d02860', left: 'menu', leftFunc: navigation.openDrawer, navigation,right: true})}
             />
             <Stack.Screen
                 name='Categories'

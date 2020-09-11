@@ -21,7 +21,7 @@ function HomeStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Home'
                 component={HomeScreen}
-                options={StackHeader({ title: 'SEPHORA LIPS', color: '#009387', left: 'menu', leftFunc: navigation.openDrawer, navigation})} />
+                options={StackHeader({ title: 'SEPHORA LIPS', color: '#009387', left: 'menu', leftFunc: navigation.openDrawer, navigation, right: true})} />
         </Stack.Navigator>
     )
 }

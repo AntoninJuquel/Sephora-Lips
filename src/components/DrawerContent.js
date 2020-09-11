@@ -14,7 +14,7 @@ function DrawerContent(props) {
             <DrawerContentScrollView {...props}>
                 <View style={Styles.drawerContent}>
 
-                    <View style={Styles.userInfoSection}>
+                    {user.imgUrl ? <View style={Styles.userInfoSection}>
                         <View style={Styles.row}>
                             <Avatar.Image
                                 source={{ uri: user.imgUrl }}
@@ -32,7 +32,19 @@ function DrawerContent(props) {
                                 <Caption style={Styles.caption}> Pts de fidélités</Caption>
                             </View>
                         </View>
-                    </View>
+                    </View> :
+                        <Drawer.Item
+                            icon={({ color, size }) => (
+                                <Icon
+                                    name='login'
+                                    color={color}
+                                    size={size}
+                                />
+                            )}
+                            label="Se connecter"
+                            onPress={() => props.navigation.navigate('Sign')}
+                        />
+                    }
 
                     <Drawer.Section style={Styles.drawerSection}>
                         <Drawer.Item
@@ -44,7 +56,7 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Accueil"
-                            onPress={() => props.navigation.navigate('HomeStack')}
+                            onPress={() => props.navigation.navigate('Tab', { screen: 'HomeStack' })}
                         />
                         <Drawer.Item
                             icon={({ color, size }) => (
@@ -55,7 +67,7 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Shopping"
-                            onPress={() => props.navigation.navigate('ShopStack')}
+                            onPress={() => props.navigation.navigate('Tab', { screen: 'ShopStack' })}
                         />
                         <Drawer.Item
                             icon={({ color, size }) => (
@@ -66,7 +78,7 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Magasins"
-                            onPress={() => props.navigation.navigate('MarketStack')}
+                            onPress={() => props.navigation.navigate('Tab', { screen: 'MarketStack' })}
                         />
                         <Drawer.Item
                             icon={({ color, size }) => (
@@ -77,7 +89,7 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Inspirations"
-                            onPress={() => props.navigation.navigate('InspirationStack')}
+                            onPress={() => props.navigation.navigate('Tab', { screen: 'InspirationStack' })}
                         />
                         <Drawer.Item
                             icon={({ color, size }) => (
@@ -88,7 +100,7 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Mon compte"
-                            onPress={() => props.navigation.navigate('AccountStack')}
+                            onPress={() => props.navigation.navigate('Tab', { screen: 'AccountStack' })}
                         />
                     </Drawer.Section>
                     <Drawer.Section>
@@ -101,7 +113,7 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Mes paramètres de compte"
-                            onPress={() => props.navigation.navigate('AccountStack',{screen: 'Parameter'})}
+                            onPress={() => props.navigation.navigate('AccountStack', { screen: 'Parameter' })}
                         />
                         <Drawer.Item
                             icon={({ color, size }) => (
@@ -112,24 +124,44 @@ function DrawerContent(props) {
                                 />
                             )}
                             label="Besoin d'aide"
-                            onPress={() => props.navigation.navigate('AccountStack',{screen: 'Help'})}
+                            onPress={() => props.navigation.navigate('AccountStack', { screen: 'Help' })}
                         />
                     </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
-            <Drawer.Section style={Styles.bottomDrawerSection} >
+            {user.admin ? <Drawer.Section style={Styles.bottomDrawerSection} >
                 <Drawer.Item
                     icon={({ color, size }) => (
                         <Icon
-                            name='exit-to-app'
+                            name='remote-desktop'
                             color={color}
                             size={size}
                         />
                     )}
-                    label="Sign Out"
-                    onPress={() => console.log("Sign out")}
+                    label="ADMINISTRATEUR"
+                    onPress={() => props.navigation.navigate('AdminStack')}
                 />
-            </Drawer.Section>
+            </Drawer.Section> : null}
+            {user.imgUrl ? <Drawer.Section style={Styles.bottomDrawerSection} >
+                <Drawer.Item
+                    icon={({ color, size }) => (
+                        <Icon
+                            name='logout'
+                            color={color}
+                            size={size}
+                        />
+                    )}
+                    label="Se déconnecter"
+                    onPress={() => dispatch({
+                        firstName: '',
+                        lastName: '',
+                        social: '',
+                        imgUrl: '',
+                        fidelity: '',
+                        admin: ''
+                    })}
+                />
+            </Drawer.Section> : null}
         </View>
     )
 }

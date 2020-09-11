@@ -1,16 +1,16 @@
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
 
-import InspirationScreen from "./InspirationScreen";
+import AdminProductsScreen from "./AdminProductsScreen";
 
 import StackHeader from '../../components/StackHeader';
 const Stack = createStackNavigator();
 
-function InspirationStackNavigator({navigation}) {
+function AdminStackNavigator({navigation}) {
     return(
         <Stack.Navigator screenOptions={{
             headerStyle: {
-                backgroundColor: '#1e88e5'
+                backgroundColor: '#000'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -18,11 +18,11 @@ function InspirationStackNavigator({navigation}) {
             }
         }}>
             <Stack.Screen 
-            name='Inspiration' 
-            component={InspirationScreen} 
-            options={StackHeader({ title: 'CONSEILS BEAUTÉ', color: '#1e88e5', left: 'menu', leftFunc: navigation.openDrawer, navigation,right: true})}/>
+            name='AdminProducts' 
+            component={AdminProductsScreen} 
+            options={StackHeader({ title: 'ADMIN', color: '#000', left: 'menu', leftFunc: navigation.openDrawer, navigation})}/>
         </Stack.Navigator>
     )
 }
 
-export default InspirationStackNavigator;
+export default AdminStackNavigator;

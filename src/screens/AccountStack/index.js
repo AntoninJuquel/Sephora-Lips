@@ -30,7 +30,7 @@ function AccountStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Account'
                 component={AccountScreen}
-                options={StackHeader({ title: 'MON BEAUTY COMPTE', color: '#b71c1c', left: 'menu', leftFunc: navigation.openDrawer, navigation })}
+                options={StackHeader({ title: 'MON BEAUTY COMPTE', color: '#b71c1c', left: 'menu', leftFunc: navigation.openDrawer, navigation, right: true })}
             />
             <Stack.Screen name='Parameter' component={ParameterScreen} />
             <Stack.Screen name='Purchase' component={PurchaseScreen} />

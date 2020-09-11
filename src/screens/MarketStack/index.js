@@ -20,7 +20,7 @@ function MarketStackNavigator({navigation}) {
             <Stack.Screen 
             name='Market' 
             component={MarketScreen} 
-            options={StackHeader({ title: 'MAGASINS', color: '#694fad', left: 'menu', leftFunc: navigation.openDrawer, navigation})}/>
+            options={StackHeader({ title: 'MAGASINS', color: '#694fad', left: 'menu', leftFunc: navigation.openDrawer, navigation,right: true})}/>
         </Stack.Navigator>
     )
 }

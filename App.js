@@ -11,6 +11,8 @@ import AccountStackNavigator from "./src/screens/AccountStack/index";
 import MarketStackNavigator from "./src/screens/MarketStack/index";
 import InspirationStackNavigator from "./src/screens/InspirationStack/index";
 import ShoppingCartStackNavigator from "./src/screens/ShoppingCartStack/index";
+import SignStackNavigator from "./src/screens/SignStack/index";
+import AdminStackNavigator from "./src/screens/AdminStack/index";
 
 import BottomTabOptions from "./src/components/BottomTab";
 import { UserProvider } from './src/providers/userProvider';
@@ -21,9 +23,11 @@ const BottomTab = createMaterialBottomTabNavigator();
 
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName='Home' drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+      <Drawer.Screen name='Sign' component={SignStackNavigator} />
       <Drawer.Screen name='Tab' component={BottomTabNavigator} />
       <Drawer.Screen name='ShoppingCartStack' component={ShoppingCartStackNavigator} options={{ swipeEnabled: false }} />
+      <Drawer.Screen name='AdminStack' component={AdminStackNavigator} />
     </Drawer.Navigator>
   )
 }

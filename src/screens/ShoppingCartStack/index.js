@@ -22,7 +22,7 @@ function ShoppingCartStackNavigator({ navigation }) {
             <Stack.Screen
                 name='ShoppingCart'
                 component={ShoppingCartScreen}
-                options={StackHeader({ title: 'Panier', color: '#000', left: 'close', leftFunc: navigation.goBack, navigation })}
+                options={StackHeader({ title: 'Panier', color: '#000', left: 'close', leftFunc: navigation.goBack, navigation,right: true})}
             />
             <Stack.Screen
                 name='Delivery'
