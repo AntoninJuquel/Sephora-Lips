@@ -8,6 +8,7 @@ import { Button, TextInput, Text, Avatar } from 'react-native-paper';
 import Users from "../../utils/Users";
 
 function SigninScreen({ navigation }) {
+  const [users, setUsers] = useState(Users);
   const [user, dispatch] = userState();
 
   const [email, setEmail] = useState()
@@ -45,7 +46,7 @@ function SigninScreen({ navigation }) {
       <View style={{ flex: 1, alignItems: "center" }}>
         <Text>Comptes récents</Text>
         <FlatList
-          data={Users}
+          data={users}
           renderItem={renderItem}
           keyExtractor={item => item.imgUrl}
         />
