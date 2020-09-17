@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, FlatList,TouchableOpacity } from 'react-native';
 
 import Styles from '../../utils/Styles';
@@ -9,11 +9,13 @@ import { shoppingCartState, updatePrice } from '../../providers/shoppingCartProv
 
 function DeliveryScreen({ navigation }) {
 
+  const [deliveries, setDeliveries] = useState(Items.deliveries)
+
   const [shoppingCart, dispatch] = shoppingCartState()
 
   const renderItem = ({ item }) => {
     return (
-      <TouchableOpacity onPress={() => dispatch({ delivery: item, total: updatePrice(shoppingCart) })}>
+      <TouchableOpacity onPress={() => dispatch({ delivery: item, total: updatePrice({...shoppingCart,delivery: item}) })}>
         <View style={{ flexDirection: 'row', width: '100%', height: 150, backgroundColor: (shoppingCart.delivery === item ? 'red' : '#fff'), marginTop: 5 }}>
 
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -33,7 +35,7 @@ function DeliveryScreen({ navigation }) {
     <View style={Styles.container}>
       <View style={{ alignItems: 'center', height: '88%', width: '100%', marginBottom: '12%' }}>
         <FlatList
-          data={Items.deliveries}
+          data={deliveries}
           keyExtractor={item => item.id.toString()}
           renderItem={renderItem}
           style={{ width: '100%' }}

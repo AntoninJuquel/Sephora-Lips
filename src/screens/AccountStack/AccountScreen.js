@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Image, FlatList } from 'react-native';
-import { Text} from "react-native-paper";
+import { View, Image, FlatList, TouchableOpacity } from 'react-native';
+import { Text } from "react-native-paper";
 
 import Styles from '../../utils/Styles';
 import { userState } from "../../providers/userProvider";
 import ArrowButton from '../../components/ArrowButton';
 
-function AccountScreen({navigation}) {
+function AccountScreen({ navigation }) {
   const [user, dispatch] = userState()
   const options =
     [
@@ -57,19 +57,29 @@ function AccountScreen({navigation}) {
   return (
     <View style={Styles.container}>
       <View style={[Styles.cardInfo, { flex: 1 }]}>
-        <Image style={{ width: 100, height: 100, borderRadius: 100 }} source={{ uri: user.imgUrl }} />
+        {user.imgUrl ? <Image style={{ width: 100, height: 100, borderRadius: 100 }} source={{ uri: user.imgUrl }} /> : null}
         <Text style={Styles.lessImportantText}>Bonjour</Text>
-        <Text style={Styles.importantText} >{user.firstName} {user.lastName}</Text>
+        {user.imgUrl ? <Text style={Styles.importantText} >{user.firstName} {user.lastName}</Text> : <TouchableOpacity onPress={() => navigation.navigate("Sign")}><Text>Identifiez-vous</Text></TouchableOpacity>}
       </View>
 
-      <View style={{ flex: 2, width: '100%', alignItems: 'center', alignContent:'center' }}>
+      <View style={{ flex: 2, width: '100%', alignItems: 'center', alignContent: 'center' }}>
         <FlatList
           data={options}
           renderItem={ArrowButton}
           keyExtractor={item => item.id.toString()}
-          style={{width: '100%'}}
-          ItemSeparatorComponent={() => (<View style={{width: '90%',alignSelf:'center', borderBottomWidth: 1}}></View>)}
+          style={{ width: '100%' }}
+          ItemSeparatorComponent={() => (<View style={{ width: '90%', alignSelf: 'center', borderBottomWidth: 1 }}></View>)}
         />
+        <TouchableOpacity onPress={() => dispatch({
+          firstName: '',
+          lastName: '',
+          social: '',
+          imgUrl: '',
+          fidelity: '',
+          admin: ''
+        })}>
+          <Text>Se déconnecter</Text>
+        </TouchableOpacity>
       </View>
 
     </View>
