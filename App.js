@@ -1,9 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-
-import DrawerContent from './src/components/DrawerContent';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import ShopStackNavigator from "./src/screens/ShopStack/index";
 import HomeStackNavigator from "./src/screens/HomeStack/index";
@@ -17,18 +14,19 @@ import AdminStackNavigator from "./src/screens/AdminStack/index";
 import BottomTabOptions from "./src/components/BottomTab";
 import { UserProvider } from './src/providers/userProvider';
 import { ShoppingCartProvider } from './src/providers/shoppingCartProvider';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Drawer = createDrawerNavigator();
-const BottomTab = createMaterialBottomTabNavigator();
+const Stack = createStackNavigator();
+const BottomTab = createBottomTabNavigator();
 
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-      <Drawer.Screen name='Sign' component={SignStackNavigator} />
-      <Drawer.Screen name='Tab' component={BottomTabNavigator} />
-      <Drawer.Screen name='ShoppingCartStack' component={ShoppingCartStackNavigator} options={{ swipeEnabled: false }} />
-      <Drawer.Screen name='AdminStack' component={AdminStackNavigator} />
-    </Drawer.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name='Sign' component={SignStackNavigator} />
+      <Stack.Screen name='Tab' component={BottomTabNavigator} />
+      <Stack.Screen name='ShoppingCartStack' component={ShoppingCartStackNavigator}/>
+      <Stack.Screen name='AdminStack' component={AdminStackNavigator} />
+    </Stack.Navigator>
   )
 }
 
@@ -36,33 +34,32 @@ function BottomTabNavigator({ route }) {
   return (
     <BottomTab.Navigator
       initialRouteName="HomeStack"
-      activeColor="#fff"
-      barStyle={(route.state && (route.state.routes && (route.state.routes[1].state && route.state.routes[1].state.index >= 2 ? { height: 0 } : {})))}
+      tabBarOptions={{activeBackgroundColor: '#fff', inactiveBackgroundColor: '#fff', inactiveTintColor: '#000', activeTintColor: '#c00'}}
     >
       <BottomTab.Screen
         name="HomeStack"
         component={HomeStackNavigator}
-        options={BottomTabOptions('Accueil', '#009387', 'home')}
+        options={BottomTabOptions('Accueil', 'home')}
       />
       <BottomTab.Screen
         name="ShopStack"
         component={ShopStackNavigator}
-        options={BottomTabOptions('Shopping', '#d02860', 'shopping-search')}
+        options={BottomTabOptions('Shopping', 'shopping-search')}
       />
       <BottomTab.Screen
         name="MarketStack"
         component={MarketStackNavigator}
-        options={BottomTabOptions('Magasins', '#694fad', 'map-marker')}
+        options={BottomTabOptions('Magasins', 'map-marker')}
       />
       <BottomTab.Screen
         name="InspirationStack"
         component={InspirationStackNavigator}
-        options={BottomTabOptions('Inspiration', '#1e88e5', 'television-guide')}
+        options={BottomTabOptions('Inspiration', 'television-guide')}
       />
       <BottomTab.Screen
         name="AccountStack"
         component={AccountStackNavigator}
-        options={BottomTabOptions('Mon compte', '#b71c1c', 'account')}
+        options={BottomTabOptions('Mon compte', 'account')}
       />
     </BottomTab.Navigator>
   );

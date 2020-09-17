@@ -1,11 +1,10 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-function BottomTabOptions(title, colors, iconName) {
+function BottomTabOptions(title, iconName) {
     return (
         {
             tabBarLabel: title,
-            tabBarColor: colors,
             tabBarIcon: ({ color }) => (
                 <Icon name={iconName} color={color} size={24} />
             ),

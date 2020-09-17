@@ -10,7 +10,7 @@ function MarketStackNavigator({navigation}) {
     return(
         <Stack.Navigator screenOptions={{
             headerStyle: {
-                backgroundColor: '#694fad'
+                backgroundColor: '#000'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -20,7 +20,7 @@ function MarketStackNavigator({navigation}) {
             <Stack.Screen 
             name='Market' 
             component={MarketScreen} 
-            options={StackHeader({ title: 'MAGASINS', color: '#694fad', left: 'menu', leftFunc: navigation.openDrawer, navigation,right: true})}/>
+            options={StackHeader({ title: 'MAGASINS', color: '#000', navigation,right: true})}/>
         </Stack.Navigator>
     )
 }

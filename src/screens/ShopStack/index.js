@@ -15,8 +15,8 @@ const TopTab = createMaterialTopTabNavigator();
 function TopTabNavigator({ navigation }) {
     return (
         <TopTab.Navigator tabBarOptions={{
-            indicatorStyle: { backgroundColor: '#d02860' },
-            activeTintColor: '#d02860',
+            indicatorStyle: { backgroundColor: '#000' },
+            activeTintColor: '#000',
         }}>
             <TopTab.Screen name='Categories' component={CategoriesScreen} options={{ tabBarLabel: 'CATEGORIES' }} />
             <TopTab.Screen name='Gift' component={GiftScreen} options={{ tabBarLabel: 'CADEAUX' }} />
@@ -29,7 +29,7 @@ function ShopStackNavigator({ navigation }) {
     return (
         <Stack.Navigator screenOptions={{
             headerStyle: {
-                backgroundColor: '#d02860'
+                backgroundColor: '#000'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -39,23 +39,23 @@ function ShopStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Shop'
                 component={TopTabNavigator}
-                options={StackHeader({ title: 'SHOPPING BEAUTÉ', color: '#d02860', left: 'menu', leftFunc: navigation.openDrawer, navigation,right: true})}
+                options={StackHeader({ title: 'SHOPPING BEAUTÉ', color: '#000', navigation,right: true})}
             />
             <Stack.Screen
                 name='Categories'
                 component={CategoriesScreen}
-                options={{ headerRight: () => ShoppingCart({ color: '#d02860', navigation }) }}
+                options={{ headerRight: () => ShoppingCart({ color: '#000', navigation }) }}
 
             />
             <Stack.Screen
                 name='Products'
                 component={ProductsScreen}
-                options={{ headerRight: () => ShoppingCart({ color: '#d02860', navigation }) }}
+                options={{ headerRight: () => ShoppingCart({ color: '#000', navigation }) }}
             />
             <Stack.Screen
                 name='Item'
                 component={ItemScreen}
-                options={{ headerRight: () => ShoppingCart({ color: '#d02860', navigation }) }}
+                options={{ headerRight: () => ShoppingCart({ color: '#000', navigation }) }}
 
             />
         </Stack.Navigator>

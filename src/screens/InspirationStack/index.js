@@ -10,7 +10,7 @@ function InspirationStackNavigator({navigation}) {
     return(
         <Stack.Navigator screenOptions={{
             headerStyle: {
-                backgroundColor: '#1e88e5'
+                backgroundColor: '#000'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -20,7 +20,7 @@ function InspirationStackNavigator({navigation}) {
             <Stack.Screen 
             name='Inspiration' 
             component={InspirationScreen} 
-            options={StackHeader({ title: 'CONSEILS BEAUTÉ', color: '#1e88e5', left: 'menu', leftFunc: navigation.openDrawer, navigation,right: true})}/>
+            options={StackHeader({ title: 'CONSEILS BEAUTÉ', color: '#000', navigation,right: true})}/>
         </Stack.Navigator>
     )
 }

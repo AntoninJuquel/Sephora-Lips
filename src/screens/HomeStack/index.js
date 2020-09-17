@@ -5,13 +5,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from "./HomeScreen";
 
 import StackHeader from '../../components/StackHeader';
+import { Text, View } from "react-native";
 const Stack = createStackNavigator();
 
 function HomeStackNavigator({ navigation }) {
     return (
         <Stack.Navigator screenOptions={{
             headerStyle: {
-                backgroundColor: '#009387'
+                backgroundColor: '#000'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -21,7 +22,7 @@ function HomeStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Home'
                 component={HomeScreen}
-                options={StackHeader({ title: 'SEPHORA LIPS', color: '#009387', left: 'menu', leftFunc: navigation.openDrawer, navigation, right: true})} />
+                options={StackHeader({ title: 'SEPHORA LIPS', color: '#000', navigation, right: true })} />
         </Stack.Navigator>
     )
 }

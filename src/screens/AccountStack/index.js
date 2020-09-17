@@ -20,7 +20,7 @@ function AccountStackNavigator({ navigation }) {
             initialRouteName='Account'
             screenOptions={{
                 headerStyle: {
-                    backgroundColor: '#b71c1c'
+                    backgroundColor: '#000'
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -30,7 +30,7 @@ function AccountStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Account'
                 component={AccountScreen}
-                options={StackHeader({ title: 'MON BEAUTY COMPTE', color: '#b71c1c', left: 'menu', leftFunc: navigation.openDrawer, navigation, right: true })}
+                options={StackHeader({ title: 'MON BEAUTY COMPTE', color: '#000', navigation, right: true })}
             />
             <Stack.Screen name='Parameter' component={ParameterScreen} />
             <Stack.Screen name='Purchase' component={PurchaseScreen} />
