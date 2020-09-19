@@ -71,7 +71,7 @@ function AddItem({ addItem, toRender, setAdding }) {
 
                 <TouchableOpacity onPress={openImagePickerAsync} >
                     <View style={{ width: 250, height: 250, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
-                        {imgUrl == '' ? <FAB small style={{ backgroundColor: '#000' }} icon="file-image-outline" /> :
+                        {imgUrl == '' || imgUrl == undefined ? <FAB small style={{ backgroundColor: '#000' }} icon="file-image-outline" /> :
                             <Image style={{ width: '100%', height: '100%' }} source={{ uri: imgUrl }} />
                         }
                     </View>
@@ -104,7 +104,7 @@ function AddItem({ addItem, toRender, setAdding }) {
             <View>
                 <TouchableOpacity onPress={openImagePickerAsync} >
                     <View style={{ width: 250, height: 250, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }} >
-                        {imgUrl == '' ? <FAB small style={{ backgroundColor: '#000' }} icon="file-image-outline" /> :
+                        {imgUrl == '' || imgUrl == undefined ? <FAB small style={{ backgroundColor: '#000' }} icon="file-image-outline" /> :
                             <Image style={{ width: '100%', height: '100%' }} source={{ uri: imgUrl }} />
                         }
                     </View>
