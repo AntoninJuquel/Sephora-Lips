@@ -16,6 +16,7 @@ import BottomTabOptions from "./src/components/BottomTab";
 import { UserProvider } from './src/providers/userProvider';
 import { ShoppingCartProvider } from './src/providers/shoppingCartProvider';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'expo-status-bar';
 
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -68,15 +69,19 @@ function BottomTabNavigator({ route }) {
 
 function App() {
   return (
-    <PaperProvider>
-      <UserProvider>
-        <ShoppingCartProvider>
-          <NavigationContainer>
-            {DrawerNavigator()}
-          </NavigationContainer>
-        </ShoppingCartProvider>
-      </UserProvider>
-    </PaperProvider>
+    <>
+      <StatusBar hidden={true} />
+
+      <PaperProvider>
+        <UserProvider>
+          <ShoppingCartProvider>
+            <NavigationContainer>
+              {DrawerNavigator()}
+            </NavigationContainer>
+          </ShoppingCartProvider>
+        </UserProvider>
+      </PaperProvider>
+    </>
   );
 }
 
