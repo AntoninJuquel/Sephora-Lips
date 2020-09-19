@@ -9,7 +9,7 @@ function Card({ title, image, price, rate, click }) {
         <TouchableOpacity onPress={() => click()}>
             <View style={Styles.card}>
                 <View style={Styles.cardImageView}>
-                    <Image style={Styles.cardImage} source={image} />
+                    <Image style={Styles.cardImage} source={typeof(image)=="string" ? {uri: image} : image} />
                 </View>
                 <View style={Styles.cardInfo}>
                     {title ? <Text style={Styles.lessImportantText}>{title}</Text> : null}

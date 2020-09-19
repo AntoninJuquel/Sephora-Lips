@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Provider as PaperProvider } from 'react-native-paper';
 
 import ShopStackNavigator from "./src/screens/ShopStack/index";
 import HomeStackNavigator from "./src/screens/HomeStack/index";
@@ -21,10 +22,10 @@ const BottomTab = createBottomTabNavigator();
 
 function DrawerNavigator() {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name='Sign' component={SignStackNavigator} />
       <Stack.Screen name='Tab' component={BottomTabNavigator} />
-      <Stack.Screen name='ShoppingCartStack' component={ShoppingCartStackNavigator}/>
+      <Stack.Screen name='ShoppingCartStack' component={ShoppingCartStackNavigator} />
       <Stack.Screen name='AdminStack' component={AdminStackNavigator} />
     </Stack.Navigator>
   )
@@ -34,7 +35,7 @@ function BottomTabNavigator({ route }) {
   return (
     <BottomTab.Navigator
       initialRouteName="HomeStack"
-      tabBarOptions={{activeBackgroundColor: '#fff', inactiveBackgroundColor: '#fff', inactiveTintColor: '#000', activeTintColor: '#c00'}}
+      tabBarOptions={{ activeBackgroundColor: '#fff', inactiveBackgroundColor: '#fff', inactiveTintColor: '#000', activeTintColor: '#c00' }}
     >
       <BottomTab.Screen
         name="HomeStack"
@@ -67,13 +68,15 @@ function BottomTabNavigator({ route }) {
 
 function App() {
   return (
-    <UserProvider>
-      <ShoppingCartProvider>
-        <NavigationContainer>
-          {DrawerNavigator()}
-        </NavigationContainer>
-      </ShoppingCartProvider>
-    </UserProvider>
+    <PaperProvider>
+      <UserProvider>
+        <ShoppingCartProvider>
+          <NavigationContainer>
+            {DrawerNavigator()}
+          </NavigationContainer>
+        </ShoppingCartProvider>
+      </UserProvider>
+    </PaperProvider>
   );
 }
 

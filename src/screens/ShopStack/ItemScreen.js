@@ -61,7 +61,7 @@ function ItemScreen({ route, navigation }) {
                 <View style={{ backgroundColor: '#fff', width: '100%', height: 550 }}>
                     <View style={{ flex: 3, backgroundColor: '#fff' }}>
                         <Image
-                            source={item.versions[imageIndex].imgUrl}
+                            source={typeof(item.versions[imageIndex].imgUrl)=="string" ? {uri: item.versions[imageIndex].imgUrl} : item.versions[imageIndex].imgUrl}
                             style={{width: '100%', height:'100%'}}
                         />
                     </View>

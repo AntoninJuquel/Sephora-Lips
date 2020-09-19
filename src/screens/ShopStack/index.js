@@ -8,6 +8,7 @@ import CategoriesScreen from './CategoriesScreen';
 import ProductsScreen from './ProductsScreen';
 import ItemScreen from './ItemScreen';
 import GiftScreen from "./GiftScreen";
+import { Text } from "react-native";
 
 const Stack = createStackNavigator();
 const TopTab = createMaterialTopTabNavigator();
@@ -39,7 +40,7 @@ function ShopStackNavigator({ navigation }) {
             <Stack.Screen
                 name='Shop'
                 component={TopTabNavigator}
-                options={StackHeader({ title: 'SHOPPING BEAUTÉ', color: '#000', navigation,right: true})}
+                options={StackHeader({ title: 'SHOPPING BEAUTÉ', color: '#000', navigation, right: true })}
             />
             <Stack.Screen
                 name='Categories'

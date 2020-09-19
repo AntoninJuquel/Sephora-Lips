@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, FlatList,TouchableOpacity } from 'react-native';
 
 import Styles from '../../utils/Styles';
@@ -6,12 +6,20 @@ import BottomButton from '../../components/BottomButton';
 
 import Items from "../../utils/Items";
 import { shoppingCartState, updatePrice } from '../../providers/shoppingCartProvider';
+import { getData } from '../../functions/AsyncStorage';
 
 function DeliveryScreen({ navigation }) {
 
-  const [deliveries, setDeliveries] = useState(Items.deliveries)
-
+  const [deliveries, setDeliveries] = useState()
   const [shoppingCart, dispatch] = shoppingCartState()
+
+  useEffect(() => {
+    function effect() {
+      getData("Delivies",Items.deliveries,setDeliveries)
+    }
+
+    effect()
+}, [])
 
   const renderItem = ({ item }) => {
     return (
