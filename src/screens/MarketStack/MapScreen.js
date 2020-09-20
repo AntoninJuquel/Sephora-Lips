@@ -1,10 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import { FAB } from "react-native-paper";
 import MapView, { Marker, Polyline, PROVIDER_GOOGLE } from 'react-native-maps';
 import Styles from '../../utils/Styles';
+import { shopsState } from '../../providers/shopProvider';
 
 const MapScreen = ({ navigation }) => {
+    const [shops, dispatch] = shopsState()
     return (
         <View style={Styles.container}>
             <MapView
@@ -24,25 +25,15 @@ const MapScreen = ({ navigation }) => {
                     longitudeDelta: 0.1
                 }}
             >
-                {/* {
-                    markers.map(marker => (
+                {
+                    shops.shops.map(marker => (
                         <Marker
-                            key={marker[0]}
-                            coordinate={{ latitude: marker[1][0], longitude: marker[1][1] }}
-                            title={marker[0]}
+                            key={marker.name}
+                            coordinate={{ latitude: marker.lat, longitude: marker.long }}
+                            title={marker.name}
                         />
                     ))
                 }
-                <Polyline
-                    coordinates={markers.map(marker => (
-                        {
-                            latitude: marker[1][0],
-                            longitude: marker[1][1]
-                        }
-                    ))}
-                    strokeColor={Colors.textColor}
-                    strokeWidth={3}
-                /> */}
 
             </MapView>
         </View>

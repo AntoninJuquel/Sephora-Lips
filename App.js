@@ -17,6 +17,7 @@ import { UserProvider } from './src/providers/userProvider';
 import { ShoppingCartProvider } from './src/providers/shoppingCartProvider';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
+import { ShopsProvider } from './src/providers/shopProvider';
 
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -75,9 +76,11 @@ function App() {
       <PaperProvider>
         <UserProvider>
           <ShoppingCartProvider>
-            <NavigationContainer>
-              {DrawerNavigator()}
-            </NavigationContainer>
+            <ShopsProvider>
+              <NavigationContainer>
+                {DrawerNavigator()}
+              </NavigationContainer>
+            </ShopsProvider>
           </ShoppingCartProvider>
         </UserProvider>
       </PaperProvider>

@@ -376,7 +376,25 @@ const Items =
                         }
                     ]
             },
-        ]
+        ],
+    shops: [
+        {
+            name: "SEPHORA PARIS ITALIE 2",
+            address: "30 Avenue d'Italie, 75013 Paris",
+            phone: '01 53 80 86 10',
+            open: true,
+            lat: 48.8253914,
+            long: 2.3756148
+        },
+        {
+            name: "PARIS BERCY VILLAGE",
+            address: "Cour Saint-Emilion, 7012 Paris",
+            phone: '01 40 02 97 79',
+            open: false,
+            lat: 48.833240,
+            long: 2.386680
+        }
+    ]
 }
 
 export default Items;

@@ -4,6 +4,7 @@ import { Button, FAB, Menu, Text, TextInput } from "react-native-paper";
 import * as ImagePicker from 'expo-image-picker';
 import { getData } from "../functions/AsyncStorage";
 import Items from "../utils/Items";
+import { shopsState } from "../providers/shopProvider";
 
 function AddItem({ addItem, toRender, setAdding }) {
 
@@ -121,11 +122,33 @@ function AddItem({ addItem, toRender, setAdding }) {
         )
     }
 
+    const renderShops = () => {
+        const [shops] = shopsState();
+        const [address, setAddress] = useState();
+        const [phone, setPhone] = useState();
+
+        return (
+            <View>
+                <TextInput label='Adresse' value={address} onChangeText={address => setAddress(address)} />
+                <TextInput label='Téléphone' keyboardType="number-pad" value={phone} onChangeText={phone => setPhone(phone)} />
+                <View style={{ flexDirection: "row", justifyContent: 'space-between' }}>
+                    <Button onPress={() => setAdding(false)}>
+                        <Text>Annuler</Text>
+                    </Button>
+                    <Button onPress={() => addItem({ id: shops.shops.length, name, address, phone, open: true, lat : 48.83324, long:  2.38668})}>
+                        <Text>Ajouter</Text>
+                    </Button>
+                </View>
+            </View>
+        )
+    }
+
     return (
         <View>
             <TextInput label='Nom' value={name} onChangeText={name => setName(name)} />
             {toRender == "Products" && renderProducts()}
             {toRender == "Categories" && renderCategories()}
+            {toRender == "Shops" && renderShops()}
         </View>
     )
 }
