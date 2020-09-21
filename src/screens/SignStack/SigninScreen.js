@@ -66,9 +66,11 @@ function SigninScreen({ navigation }) {
           <Button color="#000" onPress={() => navigation.navigate('Signup')}>S'inscrire</Button>
         </View>
       </View>
-      <View style={{ flex: 1, alignItems: "center" }}>
+      <View style={{borderTopWidth: 1, width: "90%", alignSelf: 'center'}}></View>
+      <View style={{ flex: 2, alignItems: "center" }}>
         <Text style={{fontSize: 20, fontWeight: 'bold'}}>Comptes récents</Text>
         <FlatList
+        showsVerticalScrollIndicator={false}
           data={users}
           renderItem={renderItem}
           keyExtractor={(item, i) => String(i)}

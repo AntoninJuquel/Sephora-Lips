@@ -16,6 +16,51 @@ const Users = [
         admin: false,
         email:'raj.porus@outlook.fr',
         password:'password'
+    },
+    {
+        firstName: 'Béatriz',
+        lastName: 'SIMOES',
+        social: '@beatrizsimoes',
+        imgUrl: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+        admin: true,
+        email:'beatriz.simoes@outlook.fr',
+        password:'password'
+    },
+    {
+        firstName: 'Luna',
+        lastName: 'GAMBIER',
+        social: '@lunagambier',
+        imgUrl: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+        admin: true,
+        email:'luna.gambier@outlook.fr',
+        password:'password'
+    },
+    {
+        firstName: 'Morgan',
+        lastName: 'DE CRAENE',
+        social: '@morgandecraene',
+        imgUrl: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+        admin: true,
+        email:'morgan.decraene@outlook.fr',
+        password:'password'
+    },
+    {
+        firstName: 'Elsa',
+        lastName: 'DOS SANTOS',
+        social: '@elsadossantos',
+        imgUrl: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+        admin: true,
+        email:'elsa.dossantos@outlook.fr',
+        password:'password'
+    },
+    {
+        firstName: 'Erwan',
+        lastName: 'MALOIGNE',
+        social: '@erwanmaloigne',
+        imgUrl: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png',
+        admin: true,
+        email:'erwan.maloigne@outlook.fr',
+        password:'password'
     }
 ]
 
