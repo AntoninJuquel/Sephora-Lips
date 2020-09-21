@@ -58,20 +58,21 @@ function SigninScreen({ navigation }) {
 
   return (
     <View style={Styles.container}>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, padding: 10 }}>
         <TextInput mode="outlined" label='Email' value={email} onChangeText={text => setEmail(text)} />
         <TextInput mode="outlined" secureTextEntry label='Password' value={password} onChangeText={text => setPassword(text)} />
-        <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
-          <Button onPress={() => handleSignin({ email, password })}>Se connecter</Button>
-          <Button onPress={() => navigation.navigate('Signup')}>S'inscrire</Button>
+        <View style={{marginTop: 5}}>
+          <Button mode="contained" color="#000" onPress={() => handleSignin({ email, password })}>Se connecter</Button>
+          <Button color="#000" onPress={() => navigation.navigate('Signup')}>S'inscrire</Button>
         </View>
       </View>
       <View style={{ flex: 1, alignItems: "center" }}>
-        <Text>Comptes récents</Text>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>Comptes récents</Text>
         <FlatList
           data={users}
           renderItem={renderItem}
-          keyExtractor={(item,i) => String(i)}
+          keyExtractor={(item, i) => String(i)}
+          style={{marginTop: 10}}
         />
       </View>
     </View>

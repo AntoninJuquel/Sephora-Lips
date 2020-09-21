@@ -394,6 +394,20 @@ const Items =
             lat: 48.833240,
             long: 2.386680
         }
+    ],
+    Inspirations : [
+        {
+            title: "Apple",
+            description : "Apple lele",
+            auteur:"apple",
+            imgUrl : "https://www.apple.com/euro/retail/home/d/generic/images/og.jpg?202008110017",
+        },
+        {
+            title: "Samsung",
+            description : "Samsung lele",
+            auteur:"samsung",
+            imgUrl : "https://cdn.1min30.com/wp-content/uploads/2017/05/Symbole-Samsung.jpg",
+        }
     ]
 }
 

@@ -46,7 +46,7 @@ function SignupScreen({ navigation }) {
     }
 
     return (
-        <ScrollView style={Styles.container}>
+        <ScrollView style={[Styles.container, {padding: 10}]}>
                 <TouchableOpacity onPress={openImagePickerAsync} >
                     <View style={{ width: 150, height: 150, justifyContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 10000 }} >
                         {imgUrl == '' || imgUrl == undefined ? <FAB small style={{ backgroundColor: '#000' }} icon="file-image-outline" /> :
@@ -61,9 +61,9 @@ function SignupScreen({ navigation }) {
                 <TextInput mode="outlined" secureTextEntry label='Mot de passe' value={password} onChangeText={text => setPassword(text)} />
                 <TextInput mode="outlined" secureTextEntry label='Confirmer mot de passe' />
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Button onPress={() => navigation.navigate('Signin')}>Se connecter</Button>
-                    <Button onPress={handleSingnup}>S'inscrire</Button>
+                <View style={{ marginTop: 5 }}>
+                    <Button mode="contained" color="#000" onPress={handleSingnup}>S'inscrire</Button>
+                    <Button color="#000" onPress={() => navigation.navigate('Signin')}>Se connecter</Button>
                 </View>
         </ScrollView>
     );
