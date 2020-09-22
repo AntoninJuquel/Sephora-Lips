@@ -369,10 +369,74 @@ const Items =
                         {
                             color: 'red',
                             imgUrl: require("../../assets/images/products/rougeShine.png")
-                        },
+                        }
+                    ]
+            },
+            {
+                id: 12,
+                categoryId: -2,
+                name: "Carte cadeau 20€",
+                imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg",
+                description: "",
+                price: 20,
+                rate: 0,
+                stock: 0,
+                versions:
+                    [
                         {
-                            color: 'blue',
-                            imgUrl: require("../../assets/images/products/colorLipLast.png")
+                            color: 'red',
+                            imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg"
+                        }
+                    ]
+            },
+            {
+                id: 13,
+                categoryId: -2,
+                name: "Carte cadeau 50€",
+                imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg",
+                description: "",
+                price: 50,
+                rate: 0,
+                stock: 0,
+                versions:
+                    [
+                        {
+                            color: 'red',
+                            imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg"
+                        }
+                    ]
+            },
+            {
+                id: 14,
+                categoryId: -2,
+                name: "Carte cadeau 80€",
+                imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg",
+                description: "",
+                price: 80,
+                rate: 0,
+                stock: 0,
+                versions:
+                    [
+                        {
+                            color: 'red',
+                            imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg"
+                        }
+                    ]
+            },
+            {
+                id: 15,
+                categoryId: -2,
+                name: "Carte cadeau 100€",
+                imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg",
+                description: "",
+                price: 100,
+                rate: 0,
+                stock: 0,
+                versions:
+                    [
+                        {
+                            color: 'red',
+                            imgUrl: "https://www.sephora.fr/on/demandware.static/-/Sites-masterCatalog_Sephora/default/dwd670cc7d/images/hi-res/SKU/SKU_1152/440298_swatch.jpg"
                         }
                     ]
             },
@@ -393,20 +457,66 @@ const Items =
             open: false,
             lat: 48.833240,
             long: 2.386680
+        },
+        {
+            name: "SEPHORA PARIS HAUSSMANN",
+            address: "23 Boulevard Haussmann, 75009",
+            phone: '01 53 24 99 65',
+            open: true,
+            lat: 48.872400,
+            long: 2.334570
+        },
+        {
+            name: "SEPHORA PARIS GARE DU NORD",
+            address: "Gare du Nord, 112 Rue de Maubeuge, 75010",
+            phone: '01 40 05 56 00',
+            open: true,
+            lat: 48.882540,
+            long: 2.354870
+        },
+        {
+            name: "SEPHORA PARIS RIVOLI",
+            address: "75 Rue de Rivoli, 75001",
+            phone: '01 40 13 16 50',
+            open: true,
+            lat: 48.859900,
+            long: 2.343570
+        },
+        {
+            name: "Sephora Hôtel de Ville",
+            address: "66 Rue de Rivoli, 75004",
+            phone: '01 44 61 90 00',
+            open: true,
+            lat: 48.857450,
+            long: 2.352210
+        },
+        {
+            name: "SEPHORA PARIS SAINT DENIS",
+            address: "17 Boulevard St Denis, 75002",
+            phone: '01 44 88 29 40',
+            open: true,
+            lat: 48.869336,
+            long: 2.3509092
         }
     ],
     Inspirations : [
         {
-            title: "Apple",
-            description : "Apple lele",
-            auteur:"apple",
-            imgUrl : "https://www.apple.com/euro/retail/home/d/generic/images/og.jpg?202008110017",
+            title: "ROMY",
+            description : "« Je suis la plus heureuse de pouvoir bosser avec Sephora Collection. Je suis émue car c'est une marque qui a une véritable place dans mon p'tit cœur : c'est la toute première marque à qui j'ai fait confiance quand j'ai commencé à m'intéresser au makeup, et que je continue à adorer ! J'ai testé pas mal de produits de la marque jusqu'à aujourd'hui, et je vous ai concocté une p'tite sélection de mes gros crushs du moment. Alors les babes, à vous de vous faire plaiz' maintenant ! »",
+            auteur:"romy",
+            imgUrl : "https://www.sephora.fr/dw/image/v2/BCVW_PRD/on/demandware.static/-/Library-Sites-SephoraV2/default/dwd0a2eb3f/Page%20Designer/Sephora%20Collection_ope_influenceuses_Romy2.jpg",
         },
         {
-            title: "Samsung",
-            description : "Samsung lele",
-            auteur:"samsung",
-            imgUrl : "https://cdn.1min30.com/wp-content/uploads/2017/05/Symbole-Samsung.jpg",
+            title: "GLORIA",
+            description : "« Omg ! C’est ma tête que tu es en train de voir sur le site de Sephora France ! Cela fait des années maintenant que je travaille avec l’équipe Sephora Collection et c’est un honneur aujourd’hui de vous présenter ma sélection de produits préférés ! #starterpackGlo mdr Voilà mes Glorious mes indispensables make up, que tu débutes ou non dans le maquillage ces produits sont à la portée de tous, pas besoin d’être une experte pour se sentir belle ! »",
+            auteur:"gloria_nbr",
+            imgUrl : "https://www.sephora.fr/dw/image/v2/BCVW_PRD/on/demandware.static/-/Library-Sites-SephoraV2/default/dwb3bdbf48/Page%20Designer/Sephora%20Collection_ope_influenceuses_Gloria2.jpg",
+        },
+        {
+            title: "MAYA",
+            description : "« Coucou les gars, je vous ai fait une sélection de mes produits Sephora Collection favoris. Il y a un mix de plein d’articles différents : bain, make-up, skincare… Ce que j’adore avec Sephora Collection c’est qu’il y a tout ce dont on a besoin, à des prix abordables et de qualité. J’espère que vous allez adorer ces produits autant que moi. Bisou bisou. »",
+            auteur:"mayadorable",
+            imgUrl : "https://www.sephora.fr/dw/image/v2/BCVW_PRD/on/demandware.static/-/Library-Sites-SephoraV2/default/dwec05b8ef/Page%20Designer/Sephora%20Collection_ope_influenceuses_Maya2.jpg",
         }
     ]
 }

@@ -69,7 +69,7 @@ function HomeScreen({ navigation }) {
 
       <Swiper
         cards={products.reverse()}
-        renderCard={(card) => <Card card={card} navigation={navigation} />}
+        renderCard={(card) => (card.categoryId ? <Card card={card} navigation={navigation} /> : null)}
         useViewOverflow={Platform.OS === 'ios'}
         stackSize={4}
         stackScale={10}

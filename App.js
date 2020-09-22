@@ -10,7 +10,6 @@ import MarketStackNavigator from "./src/screens/MarketStack/index";
 import InspirationStackNavigator from "./src/screens/InspirationStack/index";
 import ShoppingCartStackNavigator from "./src/screens/ShoppingCartStack/index";
 import SignStackNavigator from "./src/screens/SignStack/index";
-import AdminStackNavigator from "./src/screens/AdminStack/index";
 
 import BottomTabOptions from "./src/components/BottomTab";
 import { UserProvider } from './src/providers/userProvider';
@@ -28,7 +27,6 @@ function DrawerNavigator() {
       <Stack.Screen name='Sign' component={SignStackNavigator} />
       <Stack.Screen name='Tab' component={BottomTabNavigator} />
       <Stack.Screen name='ShoppingCartStack' component={ShoppingCartStackNavigator} />
-      <Stack.Screen name='AdminStack' component={AdminStackNavigator} />
     </Stack.Navigator>
   )
 }

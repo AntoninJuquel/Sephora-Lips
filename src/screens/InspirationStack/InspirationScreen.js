@@ -13,7 +13,7 @@ function InspirationScreen() {
           <View style={{ width: 100, height: 100}}>
             <Image style={{width: '100%', height: '100%'}} source={{uri : item.imgUrl}} />
           </View>
-          <View style={{ marginLeft: 10 }}>
+          <View style={{ marginLeft: 10, width: 275 }}>
             <Text style={{ fontWeight: "bold", fontSize: 20 }}>{item.title}</Text>
             <Text>{item.description}</Text>
             <Text>{"@".concat(item.auteur)}</Text>
